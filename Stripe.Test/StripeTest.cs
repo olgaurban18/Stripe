@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Stripe;
@@ -33,23 +32,45 @@ namespace WcfService1.Test
         }
 
         [TestMethod]
-        public void IsTrue_Info_From_Logger()
+        public void IsFalse_Transact_From_Stripe()
         {
-            var path = "\\log-test.txt";
+            var result = _stripeMock.Transact("cus_E95Ma9iXjkICPK", 10, "usd", "card_1DgnELHfplfRyOdgZGmkTmUs", null);
+
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void IsTrue_InfoLevel_InfoMethod_From_Logger()
+        {
+            var path = "\\log-info-test.txt";
+            var level = LogLevel.Info;
             var testMessage = "test message";
 
-            var logger = new Logger(new Writer(), path);
+            var logger = new Logger(new Writer(), path, level);
             logger.Info(testMessage);
-
-            Task.WaitAll();
 
             var fullPath = $"{AppDomain.CurrentDomain.BaseDirectory}{path}";
             var result = File.ReadAllText(fullPath);
 
             File.Delete(fullPath);
 
-            Assert.IsTrue(result.StartsWith("[Info]"));
+            Assert.IsTrue(result.StartsWith("[INFO]"));
             Assert.IsTrue(result.EndsWith($":{testMessage}\r\n"));
+        }
+
+        [TestMethod]
+        public void IsFalse_FileExist_From_Logger()
+        {
+            var path = "\\log-debug-test.txt";
+            var level = LogLevel.Info;
+            var testMessage = "test message";
+
+            var logger = new Logger(new Writer(), path, level);
+            logger.Debug(testMessage);
+
+            var fullPath = $"{AppDomain.CurrentDomain.BaseDirectory}{path}";
+
+            Assert.IsFalse(File.Exists(fullPath));
         }
     }
 }

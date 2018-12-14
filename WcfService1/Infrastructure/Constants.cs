@@ -3,13 +3,15 @@
     public class Constants
     {
         public static string LoggerPath = "Logger_Path";
+        public static string LoggerLevel = "Logger_Level";
+
         public static string StripeApiKey = "Stripe_ApiKey";
 
-        public static class LogLevel
+        public static class LogType
         {
-            public static string Debug = "Debug";
-            public static string Info = "Info";
-            public static string Error = "Error";
+            public static string Debug = "DEBUG";
+            public static string Info = "INFO";
+            public static string Error = "ERROR";
         }
 
         public static class ChargeStatus

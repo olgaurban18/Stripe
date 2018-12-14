@@ -98,6 +98,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\LogLevel.cs" />
     <Compile Include="Interface\ILogger.cs" />
     <Compile Include="Interface\IWriter.cs" />
     <Compile Include="Logger.cs" />
