@@ -1,40 +1,8 @@
-[Debug][13.12.2018 10:28:17]:Transaction started
-[Debug][13.12.2018 10:28:17]:Input parameters: customerId = cus_E95Ma9iXjkICPK, amount = 456, currency = usd, cardId = card_1DgnELHfplfRyOdgZGmkTmUs
-[Debug][13.12.2018 10:28:17]:Charge create options created
-[Info][13.12.2018 10:28:18]:Transaction created with status 'succeeded'
-[Debug][13.12.2018 10:28:18]:Transaction finished
-[Debug][13.12.2018 10:31:54]:Transaction started
-[Debug][13.12.2018 10:32:14]:Input parameters: customerId = , amount = 0, currency = , cardId = 
-[Error][13.12.2018 10:32:17]:Currency required!
-[Debug][13.12.2018 10:32:40]:Transaction started
-[Debug][13.12.2018 10:32:40]:Input parameters: customerId = , amount = 0, currency = , cardId = 
-[Error][13.12.2018 10:32:40]:Currency required!
-[Debug][13.12.2018 10:32:48]:Transaction started
-[Debug][13.12.2018 11:18:06]:Transaction started
-[Debug][13.12.2018 11:18:09]:Input parameters: customerId = cus_E95Ma9iXjkICPK, amount = 567, currency = usd, cardId = card_1DgnELHfplfRyOdgZGmkTmUs
-[Debug][13.12.2018 11:18:10]:Charge create options created
-[Info][13.12.2018 11:18:15]:Transaction created with status 'succeeded'
-[Debug][13.12.2018 11:18:15]:Transaction finished
-[Debug][13.12.2018 11:19:24]:Transaction started
-[Debug][13.12.2018 11:19:26]:Input parameters: customerId = cus_E95Ma9iXjkICPK, amount = 456, currency = usd, cardId = card_1DgnELHfplfRyOdgZGmkTmU
-[Debug][13.12.2018 11:19:26]:Charge create options created
-[Error][13.12.2018 11:19:28]:StripeException: Customer cus_E95Ma9iXjkICPK does not have a linked source with ID card_1DgnELHfplfRyOdgZGmkTmU.
-[Debug][13.12.2018 11:19:28]:Transaction finished
-[Debug][13.12.2018 12:36:26]:Transaction started
-[Debug][13.12.2018 12:36:28]:Input parameters: customerId = cus_E95Ma9iXjkICPK, amount = 344, currency = usd, cardId = card_1DgnELHfplfRyOdgZGmkTmUs
-[Debug][13.12.2018 12:36:28]:Charge create options created
-[Info][13.12.2018 12:36:30]:Transaction created with status 'succeeded'
-[Debug][13.12.2018 12:36:30]:Transaction finished
-[Debug][13.12.2018 12:36:46]:Transaction started
-[Debug][13.12.2018 12:36:47]:Input parameters: customerId = cus_E95Ma9iXjkICPK, amount = 344, currency = byn, cardId = card_1DgnELHfplfRyOdgZGmkTmUs
-[Debug][13.12.2018 12:36:47]:Charge create options created
-[Error][13.12.2018 12:36:47]:StripeException: Invalid currency: byn. Stripe currently supports these currencies: usd, aed, afn, all, amd, ang, aoa, ars, aud, awg, azn, bam, bbd, bdt, bgn, bif, bmd, bnd, bob, brl, bsd, bwp, bzd, cad, cdf, chf, clp, cny, cop, crc, cve, czk, djf, dkk, dop, dzd, egp, etb, eur, fjd, fkp, gbp, gel, gip, gmd, gnf, gtq, gyd, hkd, hnl, hrk, htg, huf, idr, ils, inr, isk, jmd, jpy, kes, kgs, khr, kmf, krw, kyd, kzt, lak, lbp, lkr, lrd, lsl, mad, mdl, mga, mkd, mmk, mnt, mop, mro, mur, mvr, mwk, mxn, myr, mzn, nad, ngn, nio, nok, npr, nzd, pab, pen, pgk, php, pkr, pln, pyg, qar, ron, rsd, rub, rwf, sar, sbd, scr, sek, sgd, shp, sll, sos, srd, std, szl, thb, tjs, top, try, ttd, twd, tzs, uah, ugx, uyu, uzs, vnd, vuv, wst, xaf, xcd, xof, xpf, yer, zar, zmw, eek, lvl, svc, vef
-[Debug][13.12.2018 12:36:47]:Transaction finished
-[Debug][13.12.2018 13:14:14]:Transaction started
-[Debug][13.12.2018 13:14:16]:Input parameters: customerId = cus_E95Ma9iXjkICPK, amount = 345, currency = usd, cardId = card_1DgnELHfplfRyOdgZGmkTmUs
-[Debug][13.12.2018 13:14:16]:Charge create options created
-[Info][13.12.2018 13:14:18]:Transaction created with status 'succeeded'
-[Debug][13.12.2018 13:14:18]:Transaction finished
-[Debug][13.12.2018 18:15:51]:Transaction started
-[Debug][13.12.2018 18:15:51]:Input parameters: customerId = , amount = 0, currency = , cardId = 
-[Error][13.12.2018 18:15:51]:Currency required!
+[Error][14.12.2018 12:35:01]:Currency required!
+[Info][14.12.2018 12:35:28]:Transaction created with status 'succeeded'
+[Error][14.12.2018 12:35:35]:StripeException: Invalid currency: usdd. Stripe currently supports these currencies: usd, aed, afn, all, amd, ang, aoa, ars, aud, awg, azn, bam, bbd, bdt, bgn, bif, bmd, bnd, bob, brl, bsd, bwp, bzd, cad, cdf, chf, clp, cny, cop, crc, cve, czk, djf, dkk, dop, dzd, egp, etb, eur, fjd, fkp, gbp, gel, gip, gmd, gnf, gtq, gyd, hkd, hnl, hrk, htg, huf, idr, ils, inr, isk, jmd, jpy, kes, kgs, khr, kmf, krw, kyd, kzt, lak, lbp, lkr, lrd, lsl, mad, mdl, mga, mkd, mmk, mnt, mop, mro, mur, mvr, mwk, mxn, myr, mzn, nad, ngn, nio, nok, npr, nzd, pab, pen, pgk, php, pkr, pln, pyg, qar, ron, rsd, rub, rwf, sar, sbd, scr, sek, sgd, shp, sll, sos, srd, std, szl, thb, tjs, top, try, ttd, twd, tzs, uah, ugx, uyu, uzs, vnd, vuv, wst, xaf, xcd, xof, xpf, yer, zar, zmw, eek, lvl, svc, vef
+[Debug][14.12.2018 12:36:38]:Input parameters: customerId = cus_E95Ma9iXjkICPK, amount = 444, currency = usd, cardId = card_1DgnELHfplfRyOdgZGmkTmUs
+[Debug][14.12.2018 12:36:38]:Transaction started
+[Debug][14.12.2018 12:36:38]:Charge create options created
+[Info][14.12.2018 12:36:40]:Transaction created with status 'succeeded'
+[Debug][14.12.2018 12:36:40]:Transaction finished

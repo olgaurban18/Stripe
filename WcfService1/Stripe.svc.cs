@@ -18,12 +18,12 @@ namespace WcfService1
 
         public bool Transact(string customerId, double amount, string currency, string cardId, Dictionary<string, string> extraData)
         {
-            _logger.Debug("Transaction started");
-            _logger.Debug($"Input parameters: customerId = {customerId}, amount = {amount}, currency = {currency}, cardId = {cardId}");
+            _logger.Log(new LoggerOptions(LogLevel.Debug,"Transaction started"));
+            _logger.Log(new LoggerOptions(LogLevel.Debug, $"Input parameters: customerId = {customerId}, amount = {amount}, currency = {currency}, cardId = {cardId}"));
 
             if (currency.IsNullOrEmpty())
             {
-                _logger.Error("Currency required!");
+                _logger.Log(new LoggerOptions(LogLevel.Error, "Currency required!"));
                 return false;
             }
 
@@ -35,24 +35,24 @@ namespace WcfService1
                 SourceId = cardId
             };
 
-            _logger.Debug("Charge create options created");
+            _logger.Log(new LoggerOptions(LogLevel.Debug, "Charge create options created"));
 
             try
             {
                 var charge = _service.Create(options);
 
-                _logger.Info($"Transaction created with status \'{charge.Status}\'");
+                _logger.Log(new LoggerOptions(LogLevel.Info, $"Transaction created with status \'{charge.Status}\'"));
 
                 return charge.Status != Constants.ChargeStatus.Failed;
             }
             catch (StripeException e)
             {
-                _logger.Error($"StripeException: {e.Message}");
+                _logger.Log(new LoggerOptions(LogLevel.Error, $"StripeException: {e.Message}"));
                 return false;
             }
             finally
             {
-                _logger.Debug("Transaction finished");
+                _logger.Log(new LoggerOptions(LogLevel.Debug, "Transaction finished"));
             }
         }
     }

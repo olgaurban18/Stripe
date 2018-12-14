@@ -11,7 +11,7 @@ namespace WcfService1
 
         private static readonly ReaderWriterLockSlim ReadWriteLock = new ReaderWriterLockSlim();
 
-        public void WriteToFile(string path, WriterOptions options)
+        public void WriteToFile(string path, string message)
         {
             var fullPath = $"{BasePath}{path}";
 
@@ -21,13 +21,13 @@ namespace WcfService1
                 if (!File.Exists(fullPath))
                 {
                     var swNew = File.CreateText(fullPath);
-                    swNew.WriteLine(options.Message);
+                    swNew.WriteLine(message);
                     swNew.Close();
                 }
                 else
                 {
                     var swAppend = File.AppendText(fullPath);
-                    swAppend.WriteLine(options.Message);
+                    swAppend.WriteLine(message);
                     swAppend.Close();
                 }
             }

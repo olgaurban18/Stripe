@@ -17,8 +17,8 @@ namespace WcfService1.Test
         {
             StripeConfiguration.SetApiKey("sk_test_6MeQzmNlL9F3MHqJXiFCtpbZ");
 
-            _loggerMock.Setup(a => a.Debug(It.IsAny<string>()));
-            _writerMock.Setup(a => a.WriteToFile(It.IsAny<string>(), It.IsAny<WriterOptions>()));
+            _loggerMock.Setup(a => a.Log(It.IsAny<LoggerOptions>()));
+            _writerMock.Setup(a => a.WriteToFile(It.IsAny<string>(), It.IsAny<string>()));
 
             _stripeMock = new Stripe(_loggerMock.Object);
         }
@@ -47,7 +47,7 @@ namespace WcfService1.Test
             var testMessage = "test message";
 
             var logger = new Logger(new Writer(), path, level);
-            logger.Info(testMessage);
+            logger.Log(new LoggerOptions(LogLevel.Info, testMessage));
 
             var fullPath = $"{AppDomain.CurrentDomain.BaseDirectory}{path}";
             var result = File.ReadAllText(fullPath);
@@ -66,7 +66,7 @@ namespace WcfService1.Test
             var testMessage = "test message";
 
             var logger = new Logger(new Writer(), path, level);
-            logger.Debug(testMessage);
+            logger.Log(new LoggerOptions(LogLevel.Debug, testMessage));
 
             var fullPath = $"{AppDomain.CurrentDomain.BaseDirectory}{path}";
 

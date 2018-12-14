@@ -1,1 +1,1 @@
-[INFO][14.12.2018 11:58:06]:test message
+[Info][14.12.2018 12:32:56]:test message

@@ -103,7 +103,6 @@
     <Compile Include="Interface\IWriter.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Model\LoggerOptions.cs" />
-    <Compile Include="Model\WriterOptions.cs" />
     <Compile Include="Writer.cs" />
     <Compile Include="Stripe.svc.cs">
       <DependentUpon>Stripe.svc</DependentUpon>

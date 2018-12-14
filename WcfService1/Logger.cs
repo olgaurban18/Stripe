@@ -26,30 +26,11 @@ namespace WcfService1
             Level = level;
         }
 
-        public void Debug(string message)
+        public void Log(LoggerOptions options)
         {
-            if (Level <= LogLevel.Debug)
+            if (Level <= options.Level)
             {
-                var options = new LoggerOptions(LogType.Debug, message);
-                Task.Run(() => _writer.WriteToFile(Path, options));
-            }
-        }
-
-        public void Info(string message)
-        {
-            if (Level <= LogLevel.Info)
-            {
-                var options = new LoggerOptions(LogType.Info, message);
-                Task.Run(() => _writer.WriteToFile(Path, options));
-            }
-        }
-
-        public void Error(string message)
-        {
-            if (Level <= LogLevel.Error)
-            {
-                var options = new LoggerOptions(LogType.Error, message);
-                Task.Run(() => _writer.WriteToFile(Path, options));
+                Task.Run(() => _writer.WriteToFile(Path, options.Message));
             }
         }
     }

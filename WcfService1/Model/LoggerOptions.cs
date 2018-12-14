@@ -2,12 +2,15 @@
 
 namespace WcfService1
 {
-    public class LoggerOptions : WriterOptions
+    public class LoggerOptions
     {
-        public LoggerOptions(string type, string message)
+        public string Message { get; set; }
+        public LogLevel Level { get; set; }
+
+        public LoggerOptions(LogLevel level, string message)
         {
-           // Path = ;
-            Message = $"[{type}][{DateTime.UtcNow}]:{message}";
+            Level = level;
+            Message = $"[{level.ToString()}][{DateTime.UtcNow}]:{message}";
         }
     }
 }
